@@ -10,8 +10,9 @@ export default class App extends Component {
         return (
             <div>
                 <MediaQuery minWidth={ 340 } maxWidth={ 719 }>
+                    <SideBarMenu/>
                     <div className="mobile-layout"> 
-                        <SideBarMenu/>
+                        <div> </div>
                         <PlayerContainer />
                     </div>
                 </MediaQuery> 
