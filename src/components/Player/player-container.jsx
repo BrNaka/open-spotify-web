@@ -19,7 +19,9 @@ export default class PlayerContainer extends Component {
                     <PlayerOptions width="50%" />
                 </MediaQuery>
                 <MediaQuery minWidth={ 340 } maxWidth={ 719 }> 
-                    <PlayerControllers width="100%"/>
+                    <PlayerMusicInfo />
+                    <PlayerControllers/>
+                    <PlayerOptions />
                 </MediaQuery>
             </div>
         )

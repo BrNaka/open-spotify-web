@@ -1,11 +1,8 @@
 .player-container { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    height: 14%;
-    width: 100%;
+    display: grid;
+    grid-template-columns: .1fr 1fr auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "info controllers options";
     background-color: $player-color;
     padding: 20px;
 
@@ -13,7 +10,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 13%;
+        grid-area: info;
 
         img { 
             height: 100%;
@@ -22,14 +19,13 @@
 
         .music {
             overflow-x: hidden;
-            max-width: 70%;
             white-space: nowrap;
-            height: 50px;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             margin: 0 10px;
             font-size: 0.8em;
+            max-width: 35px;
 
             .title { 
                 color: white;
@@ -41,19 +37,16 @@
     .player-option-container {
         display: flex;
         justify-content: space-between;
-        align-items: center; 
+        align-items: center;
+        grid-area: options; 
 
         .bar {
             display: flex;
             align-items: center;
-            margin-right: 10px;
-
-            i { 
-                margin: 10px !important;
-            }
+            margin-right: 2px;
 
             div { 
-                width: 70px;
+                width: 50px;
                 height: 5px;
                 border-radius: 5px;
                 background-color: $scrollbar-color;
@@ -61,17 +54,18 @@
         }
 
         i:not(:last-child) { 
+            margin-right: 2px;
             font-size: 1.1em;
-            margin-right: 10px;
         }
     }
 
     .player-controllers-container { 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         height: 100%;
+        grid-area: controllers;
 
         .controllers { 
             display: flex;
@@ -91,7 +85,7 @@
             width: 80%;
 
             .bar { 
-                width: 85%;
+                width: 75%;
                 height: 5px;
                 border-radius: 5px;
                 background-color: $scrollbar-color;

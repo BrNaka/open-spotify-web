@@ -1,0 +1,8 @@
+.mobile-layout { 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .99fr auto;
+    grid-template-areas: "main"
+                         "player";
+    height: 100vh;
+}

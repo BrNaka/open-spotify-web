@@ -1,10 +1,12 @@
-html body { 
+html, body { 
     box-sizing: border-box;
     margin: 0;
     background-color: $main-background-color; 
     color: $text-color;
     font-size: 16px;
     font-family: 'Manjari', sans-serif;
+    height: 100vh;
+    width: 100vw;
 }
 
 *, *::before, *::after { 
