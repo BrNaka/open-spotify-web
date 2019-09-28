@@ -22,10 +22,9 @@
     grid-template-areas: "home"
                          "scroll" 
                          "playlist";
-    position: absolute;
     top: 0;
     background-color: $menu-sidebar-color;
-    height: 100vh;
+    height: 100%;
     padding: 20px 0 20px;
     transition: left .6s;
 }

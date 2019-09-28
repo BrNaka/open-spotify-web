@@ -1,0 +1,9 @@
+.md-screen-container { 
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr;
+    grid-template-rows: .1fr .9fr .1fr;
+    grid-template-areas: "sidebar header header"
+                         "sidebar main main"
+                         "player player player";
+    height: 100vh;
+}

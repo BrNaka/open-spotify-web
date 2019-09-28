@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header",
-                         "main",
+    grid-template-areas: "header"
+                         "main"
                          "player";
     height: 100vh;
 }

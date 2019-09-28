@@ -13,4 +13,6 @@
         './components/header';
 
 /* Layout for different devices */
-@import './layout/mobile'
+@import './layout/mobile',
+        './layout/md-screens',
+        './layout/lg-screens';

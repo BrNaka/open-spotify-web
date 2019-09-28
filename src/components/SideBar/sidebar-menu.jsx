@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import MediaQuery from 'react-responsive'
 import MenuContainer from './menu-container.jsx'
 
 export default class SideBarMenu extends Component {
+    constructor(props) { 
+        super(props)
+    }
 
     state = { 
         hidden: true,
@@ -16,21 +18,18 @@ export default class SideBarMenu extends Component {
         })
     }
 
-    render() { 
+    render() {
+        const { closeIcon, width, position } = this.props 
         return (
-            <div>
-                <MediaQuery minWidth={ 1024 }>
-                    <MenuContainer closeIcon={ false } width="20%" left="0px"/>
-                </MediaQuery>
-                <MediaQuery minWidth={ 720 } maxWidth={ 1023 }>
-                    <MenuContainer closeIcon={ false } width="30%" left="0px"/>
-                </MediaQuery>
-                <MediaQuery minWidth={ 340 } maxWidth={ 719 }>
-                    <i className="material-icons menu-icon" onClick={ this.hideOrShow }> menu </i>
-                    { 
-                        <MenuContainer hideOrShow={ this.hideOrShow } closeIcon={true} width="40%" left={ this.state.left }/>
-                    }
-                </MediaQuery>
+            <div style={{ gridArea: "sidebar" }}>
+                { closeIcon ? <i className="material-icons menu-icon" onClick={ this.hideOrShow }> menu </i> : null }
+                <MenuContainer 
+                    hideOrShow={ this.hideOrShow } 
+                    closeIcon={ closeIcon } 
+                    width={ width } 
+                    left={ position == "absolute" ? this.state.left : null }
+                    position={ position }
+                />
             </div>
         )
     }
