@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MenuItem from './menu-item.jsx'
+import MenuItem from './menu-item'
 
 const topMenuLinks = [ 
     { name: "Home", icon: "home" },

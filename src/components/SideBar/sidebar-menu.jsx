@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MenuContainer from './menu-container.jsx'
+import MenuContainer from './menu-container'
 
 export default class SideBarMenu extends Component {
     constructor(props) { 

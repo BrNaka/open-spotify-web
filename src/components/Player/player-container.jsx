@@ -1,8 +1,8 @@
 import React from 'react'
 
-import PlayerMusicInfo from './player-music-info.jsx'
-import PlayerControllers from './player-contollers.jsx'
-import PlayerOptions from './player-options.jsx'
+import PlayerMusicInfo from './player-music-info'
+import PlayerControllers from './player-contollers'
+import PlayerOptions from './player-options'
 
 const PlayerContainer = () => { 
     return (

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import TopLinks from './top-links.jsx'
-import MidLinks from './mid-links.jsx'
-import NewPlaylist from './new-playlist.jsx'
+import TopLinks from './top-links'
+import MidLinks from './mid-links'
+import NewPlaylist from './new-playlist'
 
 export default class MenuContainer extends Component { 
     constructor(props) { 
