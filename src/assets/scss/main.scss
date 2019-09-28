@@ -1,13 +1,16 @@
 /* Structure Folder refer to: https://github.com/HugoGiraudel/sass-boilerplate/tree/master/stylesheets */
 
 /* Abstracts: Colors, Variables, Fonts */
-@import './abstracts/variables', './abstracts/fonts';
+@import './abstracts/variables', 
+        './abstracts/fonts';
 
 /* Base: Common css among components */ 
 @import './base/base';
 
 /* Components: Specific styles */ 
-@import './components/sidebar-menu', './components/player';
+@import './components/sidebar-menu', 
+        './components/player',
+        './components/header';
 
 /* Layout for different devices */
 @import './layout/mobile'

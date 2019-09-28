@@ -5,6 +5,7 @@
     grid-template-areas: "info controllers options";
     background-color: $player-color;
     padding: 20px;
+    min-height: 10%;
 
     .music-info-container { 
         display: flex;
