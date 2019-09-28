@@ -2,7 +2,7 @@
     position: absolute;
     top: 15px;
     left: 15px; 
-    font-size: 36px;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -15,17 +15,23 @@
 }
 
 .menu-container { 
-    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .4fr 1fr auto;
+    row-gap: 20px;
+    grid-template-areas: "home"
+                         "scroll" 
+                         "playlist";
     top: 0;
     background-color: $menu-sidebar-color;
-    height: 100vh;
+    height: 100%;
     padding: 20px 0 20px;
     transition: left .6s;
 }
 
 .menu-scroll { 
     overflow-y: scroll;
-    max-height: 56%;
+    grid-area: scroll;
     width: 100%;
     font-size: .8em;
 
@@ -68,8 +74,9 @@
 }
 
 .top { 
-    min-height: 20%;
-    margin-bottom: 0;
+    align-self: center;
+    grid-area: home;
+    margin: 0;
     li { 
         span { 
             margin-left: 20px;
@@ -83,6 +90,7 @@
 }
 
 .library {
+    grid-area: library;
     margin-top: 5px;
     li { 
         &:first-child { 
@@ -117,7 +125,7 @@
     padding: 0 20px;
     min-height: 20%;
     cursor: pointer;
-    margin-top: 20px;
+    align-self: center; 
 
     div {
         display: flex;
