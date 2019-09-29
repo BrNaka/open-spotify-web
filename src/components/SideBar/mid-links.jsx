@@ -9,16 +9,16 @@ const links = [
     { name: "Podcasts" }
 ]
 
-const MidLinks = ({ state, setMenu }) => { 
-    const { section, activeLink } = state
+const MidLinks = ({ section, activeLink, changeState }) => { 
     const isSectionActive = section == "library"
+    
     return (
-        <div className="menu-scroll">
+        <div className="scroll">
             <ul className="library"> 
                 <li className="label"> Your Library </li>
                 {
                     links.map((link, index) => 
-                         <li key={index} onClick={ () => setMenu({ section: "library", activeLink: index }) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
+                         <li key={index} onClick={ () => changeState("library", link.name, index ) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
                             <span> { link.name } </span>
                         </li> 
                     )
@@ -28,7 +28,7 @@ const MidLinks = ({ state, setMenu }) => {
                 <li className="label"> Playlists </li>
                 {
                     links.map((link, index) => 
-                         <li key={index} onClick={ () => setMenu({ section: "library", activeLink: index }) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
+                         <li key={index} onClick={ () => changeState("library", link.name, index ) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
                             <span> { link.name } </span>
                         </li> 
                     )

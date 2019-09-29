@@ -6,16 +6,15 @@ const links = [
     { name: "Radio", icon: "adjust" }
 ]
 
-const TopLinks = ({ state, setMenu }) => {
-    const { section, activeLink } = state
+const TopLinks = ({ section, activeLink, changeState }) => {
     const isSectionActive = section == "top"
-    
+
     return (
         <ul className="top">
-            {
+            {   
                 links.map((link, index) => {
                     return ( 
-                        <li key={index} onClick={ () => setMenu({ section: "top", activeLink: index }) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
+                        <li key={index} onClick={ () => changeState("top", link.name, index) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
                             <i className="material-icons menuIcon"> { link.icon } </i> 
                             <span> { link.name } </span>
                         </li> 
