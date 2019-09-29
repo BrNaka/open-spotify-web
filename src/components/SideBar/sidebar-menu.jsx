@@ -12,7 +12,8 @@ const SideBarMenu = ({ closeIcon, width, position }) => {
             { 
                 closeIcon ? <i className="material-icons menu-icon" onClick={ () => setSidebarState({ left: sidebarState["hidden"] ? "0px" : "-400px", hidden: !sidebarState["hidden"]}) }> menu </i> : null 
             }
-            <MenuContainer 
+            <MenuContainer
+                sidebarState={ sidebarState } 
                 hideOrShow={ setSidebarState } 
                 closeIcon={ closeIcon } 
                 width={ width } 

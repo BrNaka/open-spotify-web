@@ -4,7 +4,7 @@ import TopLinks from './top-links'
 import MidLinks from './mid-links'
 import NewPlaylist from './new-playlist'
 
-const MenuContainer = ({ width, left, position, closeIcon, hideOrShow }) => { 
+const MenuContainer = ({ width, left, position, closeIcon, hideOrShow, sidebarState }) => { 
     const [ menu, setMenu ] = useState({ 
         section: "top",
         activeLink: 0
