@@ -1,44 +1,36 @@
 import React from 'react'
-import MenuItem from './menu-item'
 
-const libraryLinks = [ 
-    { name: "Made for You", icon: null },
-    { name: "Recently Played", icon: null },
-    { name: "Liked Songs", icon: null },
-    { name: "Albums", icon: null },
-    { name: "Artists", icon: null },
-    { name: "Podcasts", icon: null }
+const links = [ 
+    { name: "Made for You" },
+    { name: "Recently Played" },
+    { name: "Liked Songs" },
+    { name: "Albums" },
+    { name: "Artists" },
+    { name: "Podcasts" }
 ]
 
-const MidLinks = ({ menuState, activeItem }) => { 
-    const section = "library"
+const MidLinks = ({ state, setMenu }) => { 
+    const { section, activeLink } = state
+    const isSectionActive = section == "library"
     return (
         <div className="menu-scroll">
             <ul className="library"> 
                 <li className="label"> Your Library </li>
                 {
-                    libraryLinks.map((link, index) => 
-                        <MenuItem 
-                            key={ index }
-                            activate={ () => activeItem(index, section) } 
-                            isActive={ menuState["selected"] == section ? index == menuState[section]["activeLink"] : false }
-                            name={ link.name } 
-                            icon={ link.icon } 
-                        />
+                    links.map((link, index) => 
+                         <li key={index} onClick={ () => setMenu({ section: "library", activeLink: index }) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
+                            <span> { link.name } </span>
+                        </li> 
                     )
                 }
             </ul>
-            <ul className="library" style={{ marginTop: "20px" }}> 
+            <ul className="library"> 
                 <li className="label"> Playlists </li>
                 {
-                    libraryLinks.map((link, index) => 
-                        <MenuItem 
-                            key={ index }
-                            activate={ () => activeItem(index, section) } 
-                            isActive={ menuState["selected"] == section ? index == menuState[section]["activeLink"] : false }
-                            name={ link.name } 
-                            icon={ link.icon } 
-                        />
+                    links.map((link, index) => 
+                         <li key={index} onClick={ () => setMenu({ section: "library", activeLink: index }) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
+                            <span> { link.name } </span>
+                        </li> 
                     )
                 }
             </ul>

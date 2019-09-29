@@ -1,26 +1,25 @@
 import React from 'react'
 
-import MenuItem from './menu-item'
-
-const topMenuLinks = [ 
+const links = [ 
     { name: "Home", icon: "home" },
     { name: "Browse", icon: "search" },
     { name: "Radio", icon: "adjust" }
 ]
 
-const TopLinks = ({ menuState, activeItem }) => { 
-    const section = "top"
+const TopLinks = ({ state, setMenu }) => {
+    const { section, activeLink } = state
+    const isSectionActive = section == "top"
+    
     return (
         <ul className="top">
             {
-                topMenuLinks.map((link, index) => 
-                    <MenuItem 
-                        key={ index }
-                        activate={ () => activeItem(index, section) } 
-                        isActive={ menuState["selected"] == section ? index == menuState[section]["activeLink"] : false }
-                        name={ link.name } 
-                        icon={ link.icon } 
-                    />
+                links.map((link, index) => {
+                    return ( 
+                        <li key={index} onClick={ () => setMenu({ section: "top", activeLink: index }) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
+                            <i className="material-icons menuIcon"> { link.icon } </i> 
+                            <span> { link.name } </span>
+                        </li> 
+                    )}
                 )
             }
         </ul>
