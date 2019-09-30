@@ -21,6 +21,8 @@ yarn start
  - <a href="https://babeljs.io/"> Babel </a>
  - <a href="https://webpack.js.org/"> webpack </a>
  - <a href="https://github.com/contra/react-responsive"> react-responsive </a>
+ - <a href="https://github.com/reduxjs/react-redux"> react-redux </a>
+ - <a href="https://github.com/reduxjs/redux"> redux </a>
  
 ## How to contribute
  - Check if there are issues with the light green "Task" label.
