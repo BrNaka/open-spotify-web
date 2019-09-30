@@ -1,3 +1,80 @@
 .main-container { 
+    grid-area: main;
     padding: 20px;
+
+    h1 { 
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 2.5em;
+        margin: 0;
+        height: 80px;
+        width: 100%;
+        color: white;
+    }
+
+    .home-container {
+        display: grid;
+        grid-template-rows: 250px;
+        grid-gap: 40px;
+        width: 100%;
+        height: 100%;
+
+        .header { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+
+            h3 { 
+                color: white;
+                margin: 0;
+            }
+        }
+
+        .icons i { 
+            font-size: 1em;
+        }
+
+        .playlists { 
+            display: inline-grid;
+            grid-auto-flow: column;
+            column-gap: 20px;
+            overflow-x: hidden;
+            min-height: 250px;
+            margin-top: 10px;
+
+            .playlist { 
+                display: grid;
+                grid-template-rows: .7fr .3fr;
+                row-gap: 10px;
+                width: 200px;
+            }
+
+            .cover { 
+                border-radius: 1px;
+                
+                img { 
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+
+            .description {
+                h4 { 
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                    color: white;
+                }
+
+                p { 
+                    margin: .5em 0;
+                }
+            }
+
+            span { 
+                word-wrap: break-word;
+            }
+        }
+    }
 }

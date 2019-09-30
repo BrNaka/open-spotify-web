@@ -16,32 +16,22 @@ export default class App extends Component {
                 <div>
                     <MediaQuery minWidth={ 1024 } >
                         <div className="lg-screen-container"> 
-                            <SideBarMenu
-                                closeIcon={ false }
-                                position="relative"
-                            />
+                            <SideBarMenu closeIcon={ false } position="relative"/>
                             <HeaderContainer />
-                            <div> </div>
+                            <MenuContainer />
                             <PlayerContainer/>
                         </div>
                     </MediaQuery> 
                     <MediaQuery minWidth={ 720 } maxWidth={ 1023 }>
                         <div className="md-screen-container"> 
-                            <SideBarMenu
-                                closeIcon={ false }
-                                position="relative"
-                            />
+                            <SideBarMenu closeIcon={ false } position="relative"/>
                             <HeaderContainer />
-                            <div> </div>
+                            <MenuContainer />
                             <PlayerContainer/>
                         </div>
                     </MediaQuery> 
                     <MediaQuery minWidth={ 340 } maxWidth={ 719 }>
-                        <SideBarMenu 
-                            closeIcon={ true } 
-                            width="40%" 
-                            position="absolute" 
-                        />
+                        <SideBarMenu closeIcon={ true } width="40%" position="absolute"/>
                         <div className="mobile-layout"> 
                             <HeaderContainer />
                             <MenuContainer />
