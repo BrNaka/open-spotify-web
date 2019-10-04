@@ -1,15 +1,19 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { Redirect, Switch, Route } from 'react-router-dom'
 
 import HomeContainer from './Home/home-container'
+import BrowseContainer from './Browse/browse-container'
+import RadioContainer from './Radio/radio-container'
 
 const MainContainer = () => {
-    const title = useSelector(state => state.menu.name) 
-    
     return (
         <div className="main-container scroll">
-            <h1> <b> { title } </b> </h1>
-            <HomeContainer />
+            <Switch>
+                <Route path="/" exact component={ HomeContainer } />
+                <Route path="/browse" component={ BrowseContainer } />
+                <Route path="/radio" component={ RadioContainer } />
+                <Route path="*"> <Redirect to="/" /> </Route>
+            </Switch>
         </div>
     )
 }

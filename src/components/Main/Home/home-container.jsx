@@ -5,11 +5,14 @@ import PlaylistSlider from './playlist-slider'
 
 const HomeContainer = () => { 
   return (
-    <div className="home-container"> 
-        { home.map(({ title, description, collection }, index) => { 
-            return <PlaylistSlider key={ index } title={ title } description={ description } collection={ collection } />
-        })}
-    </div>
+    <>
+      <h1> <b> Home </b> </h1>
+      <div className="home-container"> 
+          { home.map((playlist, index) => { 
+              return <PlaylistSlider key={ index } playlist={ playlist } />
+          })}
+      </div>
+    </>
   )
 }
 

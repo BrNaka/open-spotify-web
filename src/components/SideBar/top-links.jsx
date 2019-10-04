@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const links = [ 
-    { name: "Home", icon: "home" },
-    { name: "Browse", icon: "search" },
-    { name: "Radio", icon: "adjust" }
+    { name: "Home", path:"/", icon: "home" },
+    { name: "Browse", path:"/browse", icon: "search" },
+    { name: "Radio", path:"radio", icon: "adjust" }
 ]
 
-const TopLinks = ({ section, activeLink, changeState }) => {
+const TopLinks = ({ menuState, changeState }) => {
+    const { section, activeLink } = menuState
     const isSectionActive = section == "top"
 
     return (
@@ -14,10 +16,12 @@ const TopLinks = ({ section, activeLink, changeState }) => {
             {   
                 links.map((link, index) => {
                     return ( 
-                        <li key={index} onClick={ () => changeState("top", link.name, index) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
-                            <i className="material-icons menuIcon"> { link.icon } </i> 
-                            <span> { link.name } </span>
-                        </li> 
+                        <Link key={index} to={ link.path }>
+                            <li onClick={ () => changeState("top", link.name, index) } className={ isSectionActive ? (activeLink == index ? "activeItem" : null) : null }>
+                                <i className="material-icons menuIcon"> { link.icon } </i> 
+                                <span> { link.name } </span>
+                            </li> 
+                        </Link>
                     )}
                 )
             }

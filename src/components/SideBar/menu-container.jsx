@@ -6,7 +6,7 @@ import MidLinks from './mid-links'
 import NewPlaylist from './new-playlist'
 
 const MenuContainer = ({ width, left, position, closeIcon, hideOrShowMenu }) => { 
-    const { section, activeLink } = useSelector(state => state.menu)
+    const menuState = useSelector(state => state.menu)
     const dispatch = useDispatch()
     
     function changeState(section, name, index) { 
@@ -25,8 +25,8 @@ const MenuContainer = ({ width, left, position, closeIcon, hideOrShowMenu }) => 
             { 
                 closeIcon ? <i className="material-icons close-icon" onClick={ hideOrShowMenu }> close </i> : null 
             }
-            <TopLinks section={ section } activeLink={ activeLink } changeState= { changeState } />
-            <MidLinks section={ section } activeLink={ activeLink } changeState= { changeState } /> 
+            <TopLinks menuState={ menuState } changeState= { changeState } />
+            <MidLinks menuState={ menuState } changeState= { changeState } /> 
             <hr/>
             <NewPlaylist />
         </div> 

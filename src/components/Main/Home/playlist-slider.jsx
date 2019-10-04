@@ -2,7 +2,8 @@ import React from 'react'
 
 import Playlist from './playlist'
 
-const PlaylistSlider = ({ title, description, collection }) => { 
+const PlaylistSlider = ({ playlist }) => { 
+  const { title, description, collection } = playlist
   return(
     <div>
         <div className="header">

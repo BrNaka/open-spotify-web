@@ -9,7 +9,8 @@ const links = [
     { name: "Podcasts" }
 ]
 
-const MidLinks = ({ section, activeLink, changeState }) => { 
+const MidLinks = ({ menuState, changeState }) => { 
+    const { section, activeLink } = menuState
     const isSectionActive = section == "library"
     
     return (

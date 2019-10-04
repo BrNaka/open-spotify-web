@@ -70,22 +70,42 @@
         text-transform: uppercase;
         letter-spacing: 3px;
     }
+
+   ul:last-child { 
+        margin-top: 25px;
+    }
 }
 
 .top { 
     align-self: center;
     grid-area: home;
     margin: 0;
-    li { 
+    
+    a {
+        text-decoration: none;
+        color: $text-color;
         span { 
             margin-left: 20px;
-        }
-
-        & + li { 
+        } 
+        
+        li { 
             margin-top: 15px;
-        }
-    }
+            &:hover { 
+                font-weight: bold;
+                color: white;
+                span { 
+                    text-shadow: 0 0 5px white;
+                }
+    
+                i { 
+                    fill: white;
+                }
+            }
 
+        }
+
+        
+    }
 }
 
 .library {
@@ -107,7 +127,7 @@
 .activeItem { 
     color: white;
     font-weight: bold;
-    border-left: 5px solid $active;
+    border-left: 5px solid $active !important;
 
     i { 
         fill: white;
