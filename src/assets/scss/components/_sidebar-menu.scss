@@ -92,13 +92,13 @@
             margin-top: 15px;
             &:hover { 
                 font-weight: bold;
-                color: white;
+                color: $text-contrast;
                 span { 
-                    text-shadow: 0 0 5px white;
+                    text-shadow: 0 0 5px $text-contrast;
                 }
     
                 i { 
-                    fill: white;
+                    fill: $text-contrast;
                 }
             }
 
@@ -125,12 +125,12 @@
 }
 
 .activeItem { 
-    color: white;
+    color: $text-contrast;
     font-weight: bold;
     border-left: 5px solid $active !important;
 
     i { 
-        fill: white;
+        fill: $text-contrast;
     }
 }
 
@@ -156,14 +156,14 @@
 
     &:hover { 
         font-weight: bold;
-        color: white;
+        color: $text-contrast;
         
         span { 
-            text-shadow: 0 0 5px white;
+            text-shadow: 0 0 5px $text-contrast;
         }
 
         i { 
-            fill: white;
+            fill: $text-contrast;
         }
     }
 }

@@ -10,7 +10,7 @@
         margin: 0;
         height: 80px;
         width: 100%;
-        color: white;
+        color: $text-contrast;
     }
 
     .home-container {
@@ -27,7 +27,7 @@
             padding: 5px 0;
 
             h3 { 
-                color: white;
+                color: $text-contrast;
                 margin: 0;
             }
         }
@@ -64,7 +64,7 @@
                 h4 { 
                     margin-top: 0;
                     margin-bottom: 5px;
-                    color: white;
+                    color: $text-contrast;
                 }
 
                 p { 
@@ -99,7 +99,7 @@
 
                 .border { 
                     span { 
-                        color: white;
+                        color: $text-contrast;
                         font-weight: bold;
                     }
                     
