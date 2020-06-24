@@ -13,8 +13,8 @@
 ## Cloning and running the website
 ```
 git clone https://github.com/BrNaka/open-spotify-web.git
-yarn install
-yarn start
+npm install
+npm start
 ```
 
 ## Dependencies being used in this project
